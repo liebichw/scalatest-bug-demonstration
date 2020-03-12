@@ -65,7 +65,6 @@ testOptions in ThisBuild += Tests.Argument(TestFrameworks.ScalaTest,"-h",(target
 
 
 lazy val SCALATEST_LIBS = "org.scalatest" %% "scalatest" % "3.1.1" % "test"
-lazy val SCALACHECK_LIBS = "org.scalacheck" %% "scalacheck" % "1.14.3" % "test"
 
 lazy val proj1        = project
   .configs(Javadoc).settings(javadocSettings: _*)
