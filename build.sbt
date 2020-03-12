@@ -64,8 +64,9 @@ libraryDependencies in ThisBuild ++= Seq("com.novocode" % "junit-interface" % "0
 testOptions in ThisBuild += Tests.Argument(TestFrameworks.ScalaTest,"-h",(target.value / "html-test-report").getAbsolutePath)
 
 
-lazy val SCALATEST_LIBS = "org.scalatest" %% "scalatest" % "3.1.1" % "test"
+lazy val SCALATEST_LIBS = Seq("org.scalatest" %% "scalatest" % "3.1.1" % "test",
+                              "com.vladsch.flexmark" % "flexmark-all" % "0.35.10" % "test")
 
 lazy val proj1        = project
   .configs(Javadoc).settings(javadocSettings: _*)
-  .settings(libraryDependencies ++= LOG4J_LIBS++Seq(SCALATEST_LIBS))
+  .settings(libraryDependencies ++= LOG4J_LIBS++SCALATEST_LIBS)
